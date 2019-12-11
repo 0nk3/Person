@@ -1,4 +1,3 @@
-
 /* **************************************
  * @author : Ndumiso Onke Fanti         *
  * Description : Person class creates   *
@@ -11,21 +10,12 @@ public class Person {
     private int age;
     private String gender;
     private String[] interests;
-    public Person(String name, int age, String gender, String[] interests){
+    private Person(String name, int age, String gender, String[] interests){
         this.name = name;
         this.age = age;
         this.gender = gender;
         this.interests = interests;
     }
-    
-    // Driver
-    public  static void main(String[] args){
-		// the output has been slightly edited to acomodate the gender variable that has beeen declared but not used in the problem description
-        Person person = new Person("Ryan", 30, "male", new String[] {"being a hardarse", "agile", "ssd hard drives"});
-        String greeting = person.hello();
-        System.out.println(greeting);
-    }
-
     private String hello(){
         return "Hello, my name is " + name + " and I am "+ age + " year old " + gender + ". My interests are " + getInterest() + "." ;
     }
@@ -36,6 +26,6 @@ public class Person {
         for(int i = 0 ; i < len-1; i++) {            // extract all the elements except the last element to carter for " and [insert last element]." like in the expected output.
             inter.append(interests[i]).append(", ");
         }
-    return inter + "and " + interests[--len];       // --len get the last element in the array of interests
+        return inter + "and " + interests[--len];       // --len get the last element in the array of interests
     }
 }
